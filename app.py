@@ -36,6 +36,8 @@ session = Session(engine)
 # Create Flask app, all routes go after this code
 app = Flask(__name__)
 
+#look at module 9.5.1 for explanation on how the 
+#commented code is working
 # Example of app name variable
 # import app
 # print("example __name__ = %s", __name__)
@@ -44,7 +46,8 @@ app = Flask(__name__)
 # else:
 #     print("example is being imported")
 
-# Define welcome route
+# creating the flask route by defining our welcome route 
+#to be the root IMPORTANT: all roots go after app = Flask(__name__)
 @app.route("/")
 
 def welcome():
