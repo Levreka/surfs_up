@@ -1,18 +1,25 @@
 # Set up the Flask Weather App
-# Import dependencies
+# Import dependencies for analysis
 import datetime as dt
 import numpy as np
 import pandas as pd
+
+#import dependencies for SQLalchemy for accessing the 
+#sqlite database
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
+#import dependencies to run flask jsonify() is a helper method 
+#provided by Flask to properly return JSON data. 
+#jsonify() returns a Response object with the application/json mimetype set,
 from flask import Flask, jsonify
 
-# Set up database engine for Flask app
-# Create function allows access to SQLite database file
+
+# SET UP DATABASE
+# create database engine for Flask application note: is the same code in python
 engine = create_engine("sqlite:///hawaii.sqlite")
-# Reflect database into classes
+# Reflect database into classes: in other words we are
 Base = automap_base()
 # Reflect tables
 Base.prepare(engine, reflect=True)
