@@ -65,13 +65,23 @@ def welcome():
 #is version 1 of our application. this line can be updated 
 #to support future versions of the app as well. 
 
-# 9.5.2 says to use flask run
+# you can view code up to this point by running flask run in 
+#command promp make sure you are in the right folder holding the file
 
-# 9.5.3 Precipitation Route
+
+#PRECIPITATION ROUTE BUILD
+#CAUTION
+#Every time you create a new route, your code should be aligned to 
+#the left in order to avoid errors.
+
+#create the app route for precipitation
 @app.route("/api/v1.0/precipitation")
-
+#create the precipitation function code will look almost identical 
+#to python code minor changes to best intigrated to our apps
 def precipitation():
+   #code is just like in our climate analysis python file
    prev_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
+   #precipitation variable is created to hld the session query only name of variable changes
    precipitation = session.query(Measurement.date, Measurement.prcp).\
     filter(Measurement.date >= prev_year).all()
    precip = {date: prcp for date, prcp in precipitation}
