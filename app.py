@@ -49,7 +49,7 @@ app = Flask(__name__)
 # creating the flask route by defining our welcome route 
 #to be the root IMPORTANT: all roots go after app = Flask(__name__)
 @app.route("/")
-
+#create a function welcome with a return statement
 def welcome():
     return(
     '''
@@ -60,6 +60,10 @@ def welcome():
     /api/v1.0/tobs
     /api/v1.0/temp/start/end
     ''') 
+#note: follow the naming convetnion /api/v1.0/ followed by
+#the name of the route. this convention signifies that this 
+#is version 1 of our application. this line can be updated 
+#to support future versions of the app as well. 
 
 # 9.5.2 says to use flask run
 
