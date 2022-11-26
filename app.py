@@ -10,6 +10,7 @@ import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
+
 #import dependencies to run flask jsonify() is a helper method 
 #provided by Flask to properly return JSON data. 
 #jsonify() returns a Response object with the application/json mimetype set,
@@ -19,15 +20,19 @@ from flask import Flask, jsonify
 # SET UP DATABASE
 # create database engine for Flask application note: is the same code in python
 engine = create_engine("sqlite:///hawaii.sqlite")
-# Reflect database into classes: in other words we are
+# Reflect database into classes
 Base = automap_base()
 # Reflect tables
 Base.prepare(engine, reflect=True)
-# Set class variables
+# Set class variables: recall in our climate analysis we know
+# the two classes were reflected measurement and stations
 Measurement = Base.classes.measurement
 Station = Base.classes.station
 # Creates session link from Python to SQLite database
 session = Session(engine)
+
+
+#SET UP FLASK
 # Create Flask app, all routes go after this code
 app = Flask(__name__)
 
