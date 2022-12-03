@@ -136,31 +136,39 @@ def temp_monthly():
     return jsonify(temps=temps)
 #do flask run/ dont forget to add extension at the end
 
-#9.5.6 Statistic Route
+#9.5.6 Statistic Route/ this route will be different due to we need to provide start and end
+#As a reminder, this code should occur outside of 
+#the previous route and have no indentation.
 @app.route("/api/v1.0/temp/<start>")
 @app.route("/api/v1.0/temp/<start>/<end>")
-
+#create function called stats() and add parameters start and end 
 def stats(start=None, end=None):
+    #create a variable sel to retrieve the minimum,average, and maximum 
+    #temperatures
     sel = [func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)]
+    #create a if not statement to determine the starting and ending date
     if not end:
+        #note: the asterisk in sel is to tell our code there will be multiple results
         results = session.query(*sel).\
-            filter(Measurement.date >= start).\
-            filter(Measurement.date <= end).all()
+            filter(Measurement.date >= start).all()
+        #start unraveling our results inot one dimensional arrays by using np.ravel ()
+        #with results as our parameters and converting it into a list by
+        #using list() 
         temps = list(np.ravel(results))
+        #convert the list into a json file by using jsnoify
         return jsonify(temps)
+
+        #now calculate the temp min, avg, and max with the start and end dates
     results = session.query(*sel).\
         filter(Measurement.date >= start).\
         filter(Measurement.date <= end).all()
     temps = list(np.ravel(results))
     return jsonify(temps=temps)
-# flask run
-# After running this code, you'll be able to copy and paste the web address provided by Flask into a web browser. 
-# Open /api/v1.0/temp/start/end route and check to make sure you get the correct result, which is
-# [null,null,null]
-# You would add the following path to the address in your web browser:
-# /api/v1.0/temp/2017-06-01/2017-06-30
-# should return 
-# ["temps":[71.0,77.21989528795811,83.0]]
+# flask run/ after running this in the web browser and adding the extension
+# the result will be null null because we have not specify a date to get a result
+# we must enter a valid starting date and valid end date as this format year-month-day
+#/api/v1.0/temp/start date/end date example given: 
+
 
 # from tech help
 # if __name__ == '__main__':
