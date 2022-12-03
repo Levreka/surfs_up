@@ -18,7 +18,7 @@ These two images tell us about the differing weather patterns for the two monthl
 
 3: the biggest difference we see in the results comes from the minimum temperature of 56 (December) and 64 (June). With lower temperature level in December than in june. This could mean that although year round the business might still make profits, december is looking like it would have a smaller take in profits than months closer to june. Looking at the standard deviation 3.25 (June) and 3.74 (December) the data in december seems to be more spread out from its mean.
 
-4: if we look at the quartile data we can also assume that our previous observation on the minimun temperatures and maximun temperatures for both months could be outlier or are temperatures that are not frequent in the island during the two months.
+4: if we look at the quartile data, we can assume that the max and min temperatures of both months are outliers. Since most data points fall within the 25% & 75%  and they are close to their corresponding means. 
 
 ## Summary:
 
