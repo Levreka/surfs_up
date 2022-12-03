@@ -1,7 +1,7 @@
 # surfs_up
 
 ## Overview:
-An investor wants to learn more about the weather before committing to build a Surf and Ice Cream shop in Oahu, Hawaii. The investors main concern is the weather and how this can have a positive or negative effect in his investment. For that purpose we use tools like Jupyternotebook to run python along with other tools like SQlite Database and PostgreSQL and running Flask applications.
+An investor wants to learn more about the weather before committing to build a surfs shop that will serve also ice cream in Oahu, Hawaii. The investors main concern is the weather and how this can have a positive or negative effect in his investment. For that purpose, we gather data from SQlite data source and used tools like Jupyter notebook to run python coding language and create statistical analysis. 
 
 ## Results:
 <img width="1280" alt="Dec_temperatures" src="https://user-images.githubusercontent.com/90356052/142789900-6cb49180-d2d6-4e8f-a265-f139a9d1da7a.png">
