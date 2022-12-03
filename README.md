@@ -4,9 +4,11 @@
 An investor wants to learn more about the weather before committing to build a surfs shop that will serve also ice cream in Oahu, Hawaii. The investors main concern is the weather and how this can have a positive or negative effect in his investment. For that purpose, we gather data from SQlite data source and used tools like Jupyter notebook to run python coding language and create statistical analysis. 
 
 ## Results:
-<img width="1280" alt="Dec_temperatures" src="https://user-images.githubusercontent.com/90356052/142789900-6cb49180-d2d6-4e8f-a265-f139a9d1da7a.png">
+![image](https://user-images.githubusercontent.com/90356052/205417002-35b99147-79ce-4889-bee3-b8ad23c6deda.png)
 
-<img width="1280" alt="june_temperatures" src="https://user-images.githubusercontent.com/90356052/142789905-b82a6b00-ac86-432f-8c9e-d7781a4f5bbb.png">
+
+![image](https://user-images.githubusercontent.com/90356052/205416986-bc322aec-9f90-41f3-84fc-42d94f3af3a4.png)
+
 
 These two images tell us about the differing weather patterns for the two monthly periods. Some takeaways:
 
