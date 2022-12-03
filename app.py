@@ -170,6 +170,3 @@ def stats(start=None, end=None):
 #/api/v1.0/temp/start date/end date example given: 
 
 
-# from tech help
-# if __name__ == '__main__':
-#     app.run()
