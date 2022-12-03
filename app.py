@@ -1,3 +1,7 @@
+# NOTe: THIS CODE TAKES PLACE AFTER ANALYSIS WHICH MEANS SOME OF THIS
+#CODE TAKES INTO CONSIDERATION SOME OF THE FINDINGS OF PREVIOUS ANALYSIS
+# 
+# 
 # Set up the Flask Weather App
 # Import dependencies for analysis
 import datetime as dt
@@ -97,7 +101,7 @@ def precipitation():
 #the previous route and have no indentation. 
 #add a new route statations
 @app.route("/api/v1.0/stations")
-#defined the route function called stations
+#defined the route function called stations()
 def stations():
     #create a variable results that will get all the stations
     results = session.query(Station.station).all()
@@ -105,21 +109,32 @@ def stations():
     #with results as our parameters and converting it into a list by
     #using list()
     stations = list(np.ravel(results))
-    #conver the list into a json file by using jsnoify
+    #convert the list into a json file by using jsnoify
     return jsonify(stations=stations)
-# check website changes, (http://localhost:5000/), stations with USC0051xxxx codes
+
+    #do flask run/ dont forget to add extension at the end 
 
 #9.5.5 Monthly Temperature Route
+#As a reminder, this code should occur outside of 
+#the previous route and have no indentation.
+#defined a new route called tobs
 @app.route("/api/v1.0/tobs")
-
+#create function named monthly()
 def temp_monthly():
+    #calculate the date one eyar ago from the last date in the database
     prev_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
+    #create a results variable that will query query the primary station 'USC00519281'
+    #for all the temperature observations from the previous year
     results = session.query(Measurement.tobs).\
       filter(Measurement.station == 'USC00519281').\
       filter(Measurement.date >= prev_year).all()
+    #start unraveling our results inot one dimensional arrays by using np.ravel ()
+    #with results as our parameters and converting it into a list by
+    #using list() 
     temps = list(np.ravel(results))
+    #convert the list into a json file by using jsnoify
     return jsonify(temps=temps)
-#do flask run, (http://localhost:5000/), block of temps (F)
+#do flask run/ dont forget to add extension at the end
 
 #9.5.6 Statistic Route
 @app.route("/api/v1.0/temp/<start>")
